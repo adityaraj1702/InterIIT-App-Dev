@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    tools:context=".fragments.fitnesstabs.BmiActivity">
+
+     <include layout="@layout/toolbar"
+         android:id="@+id/toolbar"
+         />
+
+     <LinearLayout
+         android:id="@+id/weightLL"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/toolbar"
+         android:focusableInTouchMode="true"
+         android:layout_marginTop="40dp">
+         <TextView
+              android:id="@+id/weightTV"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="10dp"
+              android:textSize="20sp"
+              android:text="Weight"/>
+         <EditText
+             android:id="@+id/weightET"
+              android:layout_width="170dp"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="20dp"
+              android:inputType="numberDecimal"/>
+         <com.google.android.material.textfield.TextInputLayout
+             android:layout_width="135dp"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="10dp"
+              android:hint="Unit"
+              style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+              <AutoCompleteTextView
+                  android:id="@+id/autoCompleteWeightTV"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                   android:inputType="none"/>
+         </com.google.android.material.textfield.TextInputLayout>
+     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/heightLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weightLL"
+        android:focusableInTouchMode="true"
+        android:layout_marginTop="40dp">
+        <TextView
+            android:id="@+id/heightTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="20sp"
+            android:text="Height"/>
+        <EditText
+            android:id="@+id/heightET"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:inputType="numberDecimal"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:hint="Unit"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteHeightTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calculateBmiBtn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Calculate BMI"
+        android:layout_below="@id/heightLL"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
+
+    <LinearLayout
+        android:id="@+id/bmiLL"
+        android:layout_below="@id/calculateBmiBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Your BMI :"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:background="#A8A8A8"/>
+        <TextView
+            android:id="@+id/bmiValTV"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="BMI"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white"/>
+
+    </LinearLayout>
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/genderLL"-->
+<!--        android:layout_width="250dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/bmiLL"-->
+<!--        android:focusableInTouchMode="true"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginTop="40dp">-->
+<!--        <TextView-->
+<!--            android:id="@+id/genderTV"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:textSize="20sp"-->
+<!--            android:text="Gender"/>-->
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:hint="Select"-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">-->
+
+<!--            <AutoCompleteTextView-->
+<!--                android:id="@+id/autoCompleteGenderTV"-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:inputType="none"/>-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--    </LinearLayout>-->
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/checkStatusBtn"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="65dp"-->
+<!--        android:layout_toEndOf="@id/genderLL"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_below="@+id/bmiLL"-->
+<!--        android:text="Check Status"-->
+<!--        app:cornerRadius="8dp"/>-->
+
+    <TextView
+        android:id="@+id/resultTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bmiLL"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:textSize="30sp"/>
+
+</RelativeLayout>

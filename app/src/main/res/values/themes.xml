@@ -6,4 +6,8 @@
     </style>
 
     <style name="Theme.Interiitappdev" parent="Base.Theme.Interiitappdev" />
+    
+    <style name="CustomTabStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">10sp</item>
+    </style>
 </resources>
